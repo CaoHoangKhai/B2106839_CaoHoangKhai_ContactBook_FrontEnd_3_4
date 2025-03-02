@@ -30,10 +30,18 @@
                     <i class="fas fa-address-card"></i>
                 </h4>
                 <ContactCard :contact="activeContact" />
+
+                <!-- Nút Hiệu chỉnh -->
+                <router-link :to="{ name: 'contact.edit', params: { id: activeContact._id } }">
+                    <span class="mt-2 badge badge-warning">
+                        <i class="fas fa-edit"></i> Hiệu chỉnh
+                    </span>
+                </router-link>
             </div>
         </div>
     </div>
 </template>
+
 <script>
 import ContactCard from "@/components/ContactCard.vue";
 import InputSearch from "@/components/InputSearch.vue";
